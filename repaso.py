@@ -17,6 +17,10 @@ A continuación vamos a realizar una serie de ejercicios de cara a repasar algun
 a = 0 # int
 b = "0" # str
 c = True # Bolean
+d = 0.0 # float
+
+print(type(a))
+print(type(b))
 
 print(a, "-", b, "-", c)
 print("------------\n")
@@ -24,7 +28,8 @@ print("------------\n")
 # O vacias usando los tipos.
 a = int() # int
 b = str() # str
-c = bool() # Bolean
+c = bool() # bolean
+d = float() # float
 
 print(a, "-", b, "-", c)
 print("------------\n")
@@ -64,11 +69,12 @@ print(type(dict_))
 
 # Los diccionarios estan compuestos de pares de clave y valor (key and value).
 dict_ = {"key": "value"}
+
 print(dict_)
 print("------------\n")
 
 # Los diccionarios aceptan distintos tipos de variables para clave y valor (key and value)
-dict_ = {1:0, "key": "value", "key": 1, "clave": "valor"}
+dict_ = {1: 0, "key": "value", "key": 1, "clave": "valor"}
 print(dict_)
 print("------------\n")
 
@@ -79,6 +85,7 @@ print("------------\n")
 # Indexamos listas usando [] y un entero que es el valor del elemento
 lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(lista[0])
+print(lista[7])
 print("------------\n")
 
 # Si nos pasamos de largo indexando da error:
@@ -89,7 +96,15 @@ print("------------\n")
 # print(lista[0])
 
 # Podemos indexar más de un elemento así
-print(lista[0:4])
+lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+valor = lista[-1]
+
+sublista = lista[2:5]
+
+print(sublista)
+print(type(sublista))
+
 print("------------\n")
 
 # El último elemento siempre se puede obtener asi
@@ -100,7 +115,7 @@ print("------------\n")
 print(lista[0:6:2])
 print("------------\n")
 
-print(lista[4::-2])
+print(lista[4:0:-2])
 print("------------\n")
 
 # Podemos omitir el final si no ponemos nada
@@ -113,6 +128,8 @@ print(a)
 print("------------\n")
 
 # Podemos modificar un elemento de la lista de la manera siguiente
+lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
 lista[0] = 10000
 print(lista)
 print("------------\n")
@@ -146,7 +163,7 @@ print("------------\n")
 
 # Al igual que las listas se indexa con []. 
 # Por eso es importante ser explicito en el nombre para que no dar lugar a errores.
-dict_ = {"key1": "value1", "key2": "value2", "key3": "value3", "key4": "value4"}
+dict_ = {"key1": "value1", "key3": "value2", "key3": "value3", "key4": "value4"}
 
 # En principio solo podemos recuperar valores del diccionario de uno en uno.
 print(dict_["key1"])
@@ -157,7 +174,7 @@ dict_["key1"] = "elemento modificado"
 print(dict_)
 
 # Para añadir elementos nuevos simplemente indexamos una clave que no exista y le damos un valor
-dict_["key5"] = "elemento nuevo"
+dict_["cosas"] = "elemento nuevo"
 print(dict_)
 print("------------\n")
 
@@ -177,4 +194,13 @@ print(dict_)
 print("------------\n")
 
 # Como se puede ver, al igual que en las listas la asignación a una variable procude una copia
- 
+# ---------------------- COMO BORRAR ELEMENTOS -----------
+lista = [1, 2, 3, 4, 5]
+del lista[:3]
+print(lista)
+
+print("------------\n")
+
+dict_ = {"key1": "value1", "key2": "value2", "key3": "value3", "key4": "value4"}
+del dict_["key3"]
+print(dict_)
